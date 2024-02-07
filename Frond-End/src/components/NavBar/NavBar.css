@@ -1,0 +1,30 @@
+header {
+    width: 100%;
+    background-color: rgb(73, 73, 73);
+    /* padding: 10px; */
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    box-shadow: rgba(111, 0, 117, 0.15) 0px 1px 2px, rgba(111, 0, 117, 0.142) 0px 2px 4px, rgba(111, 0, 117, 0.241) 0px 4px 8px, rgba(1, 156, 141, 0.07) 0px 8px 16px, rgba(5, 91, 161, 0.07) 0px 16px 32px, rgba(111, 0, 117, 0.45) 0px 32px 64px;
+}
+.bu{
+    padding: 6px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(111, 0, 117);height: 30Px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    
+}
+.white{
+    width: 40%;
+    height: 100px;
+    background-color: white;
+    border-radius: 10PX;
+    padding: 10px;
+    position: fixed;
+    left: 30%;
+    top: 30%;
+    z-index: 3000;
+}
