@@ -1,9 +1,12 @@
+
 import { ADDIMAGE, ADDUSER, ADDFAV } from "../actions/Types";
 
-export const AppRe = (state = {users:[]}, action)=>{
+
+
+export const AppRe = (state = {users:[],Images:[]} , action)=>{
+    console.log("******");
     console.log('st' , state);
-
-
+     console.log('st1' , action);
     switch(action.type) {
          case ADDUSER : return {...state , users:[...state.users,{
             name:action.name,

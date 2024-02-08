@@ -1,21 +1,26 @@
-import "../Sing/Sing.css"
+import "./Sing.css"
 // import  imaTikTok from "../../Images/tiktokImageNew.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {  useState } from "react";
-import { useSelector ,useDispatch } from "react-redux";
-// import {AddUser} from "../../"
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {AddUser} from "../../reduce/actions/Data.jsx"
 
 
 // import { AddUser } from "../../redux/actions/Data";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 
 export default function Sing() {
 
-    let stateUsers = useSelector(state => state)
-    let dispatch = useDispatch()
 
-    // console.log('rr' , stateUsers);
+    let dispatch = useDispatch()
+    const users = useSelector(state => state.count);
+    // let nav = useNavigate()
+
+    console.log("Users " , users);
+
+
 
 
     let token = []
@@ -38,9 +43,39 @@ export default function Sing() {
         let [name,setName] = useState('')
 
         function sendData() {
-            console.log('dddd');
             tooo()
-            dispatch()
+          
+            
+        if(JSON.parse(window.localStorage.getItem('Users')) ){
+            let ob1 = 
+                {
+                name:name,
+                email:email,
+                password:password,
+                token:token.join(''),
+                Fav:[]
+               }
+                let y = JSON.parse(window.localStorage.getItem('Users'))
+                y.push(ob1)
+                window.localStorage.setItem('Users',JSON.stringify(y) )
+                window.localStorage.setItem('Token',token.join(''))
+                nav('/')
+              return
+            }
+
+
+               let ob2 = [
+                {
+                name:name,
+                email:email,
+                password:password,
+                token:token.join(''),
+                 Fav:[]
+            }]
+             window.localStorage.setItem('Users', [JSON.stringify(ob2)])
+             window.localStorage.setItem('Token',token.join(''))
+             nav('/')
+             
            
             
         }
